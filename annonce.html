@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurore Équitation - Annonces du Staff</title>
+<link rel="icon" href="https://image.noelshack.com/fichiers/2026/04/1/1768815121-aurore.jpg" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg,#fff7f2,#f0f7ff);
+  color:#333;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+.container { display:flex; flex:1; }
+.sidebar {
+  width:230px;
+  background: linear-gradient(to bottom,#ff8c42,#ff5e3a);
+  padding:25px 15px;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar h2 {
+  color:white;
+  text-align:center;
+  margin-bottom:20px;
+  font-size:1.7em;
+}
+.sidebar a {
+  color:white;
+  text-decoration:none;
+  padding:12px;
+  margin:6px 0;
+  border-radius:12px;
+  display:block;
+  font-weight:600;
+  transition: all 0.3s;
+}
+.sidebar a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateX(5px);
+}
+.main { flex:1; padding:25px 35px; max-width:1050px; }
+
+header {
+  display:flex;
+  align-items:center;
+  margin-bottom:25px;
+  background:white;
+  padding:15px 20px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+header img {
+  height:55px;
+  margin-right:15px;
+  border-radius:12px;
+}
+header h1 {
+  font-size:2em;
+  color:#ff6f31;
+}
+
+.thread {
+  background:white;
+  padding:22px 25px;
+  margin:15px 0;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.08);
+  transition:all 0.3s;
+}
+.thread:hover {
+  transform:translateY(-4px);
+  box-shadow:0 14px 35px rgba(0,0,0,0.15);
+}
+.thread-header {
+  display:flex;
+  align-items:center;
+  margin-bottom:12px;
+}
+.thread-header .avatar {
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  margin-right:15px;
+  border:3px solid #ff8c42;
+  object-fit:cover;
+}
+.thread-content a {
+  text-decoration:none;
+  color:#ff6f31;
+  font-weight:700;
+  font-size:1.15em;
+}
+.thread-content a:hover { color:#ff8c42; }
+.thread-meta {
+  font-size:0.85em;
+  color:#777;
+}
+.thread-body {
+  margin-left:70px;
+  font-size:1em;
+  line-height:1.5;
+}
+
+.return-home {
+  margin-top:20px;
+  text-align:center;
+}
+.return-home a {
+  display:inline-block;
+  background:linear-gradient(to right,#ff8c42,#ff5e3a);
+  color:white;
+  text-decoration:none;
+  padding:12px 24px;
+  border-radius:14px;
+  font-weight:700;
+  transition:all 0.2s;
+}
+.return-home a:hover {
+  transform:scale(1.05);
+  background:linear-gradient(to right,#ff5e3a,#ff8c42);
+}
+
+footer {
+  background:#ff6f31;
+  color:white;
+  text-align:center;
+  padding:15px;
+  font-weight:500;
+}
+.support-section {
+  background:#ff7f50;
+  color:white;
+  padding:12px;
+  text-align:center;
+  font-weight:600;
+  margin-top:5px;
+  border-radius:8px;
+}
+
+@media (max-width:900px){
+  .container{flex-direction:column;}
+  .sidebar{width:100%; min-height:auto; flex-direction:row; justify-content:space-around;}
+  .main{max-width:100%;}
+  .thread-body { margin-left:0; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <h2>Catégories</h2>
+        <a href="Aurore1.html">Accueil</a>
+        <a href="discu.html">Discussions générales</a>
+        <a href="SS.html">Soins & Santé</a>
+        <a href="pratiques.html">Pratiques Équestres</a>
+        <a href="#" id="competitionsLink">Compétitions ▼</a>
+        <div id="competitionsSub" style="display:none; margin-left:15px;">
+            <a href="organisation.html">Organisation</a>
+            <a href="resultat.html">Résultats Personnel</a>
+        </div>
+        <a href="equipement.html">Équipement & Accessoires</a>
+        <a href="annonce.html">Annonces</a>
+    </div>
+
+    <div class="main">
+        <header>
+            <img src="https://image.noelshack.com/fichiers/2026/04/1/1768815121-aurore.jpg" alt="Logo Aurore">
+            <h1>Annonces du Staff</h1>
+        </header>
+
+        <!-- Message info -->
+        <div class="new-thread">
+            <h2>🛑 Les utilisateurs ne peuvent pas publier ici</h2>
+            <p>Seul le staff d'Aurore peut publier des annonces publiques sur cette page.</p>
+        </div>
+
+        <!-- Exemples d'annonces -->
+        <div id="annoncesContainer">
+            <div class="thread">
+                <div class="thread-header">
+                    <img src="https://image.noelshack.com/fichiers/2026/04/1/1768815121-aurore.jpg" class="avatar" alt="Staff">
+                    <div class="thread-content">
+                        <a href="#">Maintenance du forum</a>
+                        <div class="thread-meta">Staff • 19 janvier 2026</div>
+                    </div>
+                </div>
+                <div class="thread-body">
+                    Le forum sera en maintenance demain de 10h à 12h pour des améliorations techniques.
+                </div>
+            </div>
+
+            <div class="thread">
+                <div class="thread-header">
+                    <img src="https://image.noelshack.com/fichiers/2026/04/1/1768815121-aurore.jpg" class="avatar" alt="Staff">
+                    <div class="thread-content">
+                        <a href="#">Nouvelle fonctionnalité</a>
+                        <div class="thread-meta">Staff • 18 janvier 2026</div>
+                    </div>
+                </div>
+                <div class="thread-body">
+                    Une section "Pratiques Équestres" a été ajoutée pour partager vos disciplines favorites.
+                </div>
+            </div>
+        </div>
+
+        <!-- Retour accueil -->
+        <div class="return-home">
+            <a href="Aurore1.html">⬅ Retour à l'accueil</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Aurore Équitation. Tous droits réservés.
+</footer>
+<div class="support-section">
+    Support
+</div>
+
+<script>
+// Sidebar interactive
+const competitionsLink = document.getElementById('competitionsLink');
+const competitionsSub = document.getElementById('competitionsSub');
+competitionsLink.addEventListener('click', (e)=>{
+    e.preventDefault();
+    competitionsSub.style.display = competitionsSub.style.display === 'none' ? 'block' : 'none';
+    competitionsLink.textContent = competitionsSub.style.display === 'block' ? "Compétitions ▲" : "Compétitions ▼";
+});
+</script>
+</body>
+</html>

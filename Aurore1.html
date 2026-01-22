@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurore Équitation - Accueil</title>
+<link rel="icon" href="https://image.noelshack.com/fichiers/2026/04/1/1768815121-aurore.jpg" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg,#fff7f2,#e6fff5);
+  color:#333;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+.container { display:flex; flex:1; }
+.sidebar {
+  width:230px;
+  background: linear-gradient(to bottom,#ff8c42,#ff5e3a);
+  padding:25px 15px;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar h2 {
+  color:white;
+  text-align:center;
+  margin-bottom:20px;
+  font-size:1.7em;
+}
+.sidebar a {
+  color:white;
+  text-decoration:none;
+  padding:12px;
+  margin:6px 0;
+  border-radius:12px;
+  display:block;
+  font-weight:600;
+  transition: all 0.3s;
+}
+.sidebar a:hover {
+  background: rgba(255,255,255,0.2);
+  transform: translateX(5px);
+}
+.main { flex:1; padding:25px 35px; max-width:1050px; }
+
+header {
+  display:flex;
+  align-items:center;
+  margin-bottom:25px;
+  background:white;
+  padding:15px 20px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+header img {
+  height:55px;
+  margin-right:15px;
+  border-radius:12px;
+}
+header h1 {
+  font-size:2em;
+  color:#ff6f31;
+}
+
+.profile-section {
+  display:flex;
+  align-items:center;
+  gap:12px;
+  background:white;
+  padding:15px 20px;
+  border-radius:18px;
+  margin-bottom:20px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+.profile-section img {
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  border:2px solid #ff8c42;
+  object-fit:cover;
+}
+.profile-section input {
+  padding:8px 10px;
+  border-radius:10px;
+  border:1px solid #ccc;
+}
+.profile-section button {
+  padding:9px 16px;
+  border-radius:12px;
+  border:none;
+  background:linear-gradient(to right,#ff8c42,#ff5e3a);
+  color:white;
+  font-weight:600;
+  cursor:pointer;
+  transition:all 0.2s;
+}
+.profile-section button:hover {
+  transform:scale(1.05);
+  background:linear-gradient(to right,#ff5e3a,#ff8c42);
+}
+
+.welcome-box {
+  background:white;
+  padding:25px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+  margin-bottom:25px;
+}
+.welcome-box h2 {
+  color:#ff6f31;
+  margin-bottom:10px;
+}
+.welcome-box p {
+  line-height:1.6;
+}
+
+.quick-links {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  gap:18px;
+  margin-bottom:30px;
+}
+.quick-card {
+  background:linear-gradient(135deg,#ff8c42,#ff5e3a);
+  color:white;
+  padding:20px;
+  border-radius:20px;
+  font-weight:700;
+  text-align:center;
+  text-decoration:none;
+  box-shadow:0 8px 25px rgba(0,0,0,0.2);
+  transition:all 0.3s;
+}
+.quick-card:hover {
+  transform:translateY(-6px) scale(1.03);
+  box-shadow:0 14px 35px rgba(0,0,0,0.3);
+}
+
+.latest-threads {
+  background:white;
+  padding:25px;
+  border-radius:22px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+.latest-threads h2 {
+  color:#ff6f31;
+  margin-bottom:15px;
+}
+.latest-thread {
+  padding:12px;
+  border-bottom:1px solid #eee;
+}
+.latest-thread:last-child { border-bottom:none; }
+.latest-thread a {
+  text-decoration:none;
+  font-weight:700;
+  color:#ff6f31;
+}
+.latest-thread a:hover { color:#ff8c42; }
+.latest-meta {
+  font-size:0.85em;
+  color:#777;
+}
+
+footer {
+  background:#ff6f31;
+  color:white;
+  text-align:center;
+  padding:15px;
+  font-weight:500;
+}
+.support-section {
+  background:#ff7f50;
+  color:white;
+  padding:12px;
+  text-align:center;
+  font-weight:600;
+  margin-top:5px;
+  border-radius:8px;
+}
+
+@media (max-width:900px){
+  .container{flex-direction:column;}
+  .sidebar{width:100%; min-height:auto; flex-direction:row; justify-content:space-around;}
+  .main{max-width:100%;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="sidebar">
+        <h2>Catégories</h2>
+        <a href="index.html">Accueil</a>
+        <a href="discu.html">Discussions générales</a>
+        <a href="SS.html">Soins & Santé</a>
+        <a href="pratiques.html">Pratiques Équestres</a>
+        <a href="#" id="competitionsLink">Compétitions ▼</a>
+        <div id="competitionsSub" style="display:none; margin-left:15px;">
+            <a href="organisation.html">Organisation</a>
+            <a href="resultat.html">Résultats Personnel</a>
+        </div>
+        <a href="equipement.html">Équipement & Accessoires</a>
+        <a href="annonce.html">Annonces</a>
+    </div>
+
+    <div class="main">
+        <header>
+            <img src="https://image.noelshack.com/fichiers/2026/04/1/1768815121-aurore.jpg" alt="Logo Aurore">
+            <h1>Bienvenue sur Aurore Équitation</h1>
+        </header>
+
+        <!-- Profil -->
+        <div class="profile-section">
+            <img id="userAvatar" src="https://image.noelshack.com/fichiers/2026/04/1/1768815843-profil-de-base.png" alt="Avatar">
+            <input type="text" id="pseudoInput" placeholder="Votre pseudo">
+            <input type="text" id="avatarInput" placeholder="URL de l'avatar">
+            <button id="setProfile">Mettre à jour</button>
+        </div>
+
+        <!-- Message de bienvenue -->
+        <div class="welcome-box">
+            <h2>Bienvenue 🐴</h2>
+            <p>
+                Aurore Équitation est un espace communautaire dédié aux passionnés de chevaux,
+                de l'équitation de loisir à la compétition. Discute, partage, demande conseil
+                et fais partie d'une communauté bienveillante !
+            </p>
+        </div>
+
+        <!-- Accès rapide -->
+        <div class="quick-links">
+            <a class="quick-card" href="discu.html">💬 Discussions générales</a>
+            <a class="quick-card" href="SS.html">🩺 Soins & Santé</a>
+            <a class="quick-card" href="pratiques.html">🏇 Pratiques Équestres</a>
+            <a class="quick-card" href="organisation.html">🏆 Organisation</a>
+            <a class="quick-card" href="resultat.html">🥇 Résultats Personnel</a>
+            <a class="quick-card" href="equipement.html">🧰 Équipement & Accessoires</a>
+            <a class="quick-card" href="annonce.html">📢 Annonces</a>
+        </div>
+
+        <!-- Dernières discussions -->
+        <div class="latest-threads">
+            <h2>Dernières discussions</h2>
+            <div class="latest-thread">
+                <a href="discu.html">Quel équipement pour un cheval débutant ?</a>
+                <div class="latest-meta">Posté par Clara • 15 janvier 2026</div>
+            </div>
+            <div class="latest-thread">
+                <a href="SS.html">Conseils pour prévenir les coliques</a>
+                <div class="latest-meta">Posté par Lucas • 14 janvier 2026</div>
+            </div>
+            <div class="latest-thread">
+                <a href="pratiques.html">Votre discipline préférée ?</a>
+                <div class="latest-meta">Posté par Emma • 13 janvier 2026</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 Aurore Équitation. Tous droits réservés.
+</footer>
+<div class="support-section">
+    Support
+</div>
+
+<script>
+// Sidebar interactive
+const competitionsLink = document.getElementById('competitionsLink');
+const competitionsSub = document.getElementById('competitionsSub');
+competitionsLink.addEventListener('click', (e)=>{
+    e.preventDefault();
+    competitionsSub.style.display = competitionsSub.style.display === 'none' ? 'block' : 'none';
+    competitionsLink.textContent = competitionsSub.style.display === 'block' ? "Compétitions ▲" : "Compétitions ▼";
+});
+
+// Profil persistant
+function loadProfile() {
+    const storedPseudo = localStorage.getItem('pseudo');
+    const storedAvatar = localStorage.getItem('avatar');
+    if(storedPseudo) document.getElementById('pseudoInput').value = storedPseudo;
+    if(storedAvatar) {
+        document.getElementById('avatarInput').value = storedAvatar;
+        document.getElementById('userAvatar').src = storedAvatar;
+    }
+}
+loadProfile();
+
+document.getElementById('setProfile').addEventListener('click', () => {
+    const pseudo = document.getElementById('pseudoInput').value || "Anonyme";
+    const avatarUrl = document.getElementById('avatarInput').value || "https://image.noelshack.com/fichiers/2026/04/1/1768815843-profil-de-base.png";
+    document.getElementById('userAvatar').src = avatarUrl;
+    localStorage.setItem('pseudo', pseudo);
+    localStorage.setItem('avatar', avatarUrl);
+});
+</script>
+</body>
+</html>

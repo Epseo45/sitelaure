@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aurore Équitation - Organisation</title>
+<link rel="icon" href="https://image.noelshack.com/fichiers/2026/04/1/1768815121-aurore.jpg" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(135deg,#fff7f2,#e6f7ff);
+  color:#333;
+  display:flex;
+  flex-direction:column;
+  min-height:100vh;
+}
+.container { display:flex; flex:1; }
+.sidebar {
+  width:230px;
+  background: linear-gradient(to bottom,#ff8c42,#ff5e3a);
+  padding:25px 15px;
+  display:flex;
+  flex-direction:column;
+}
+.sidebar h2 { color:white; text-align:center; margin-bottom:20px; font-size:1.7em; }
+.sidebar a { color:white; text-decoration:none; padding:12px; margin:6px 0; border-radius:12px; display:block; font-weight:600; transition: all 0.3s; }
+.sidebar a:hover { background: rgba(255,255,255,0.2); transform: translateX(5px); }
+
+.main { flex:1; padding:25px 35px; max-width:1050px; }
+
+header { display:flex; align-items:center; margin-bottom:25px; background:white; padding:15px 20px; border-radius:18px; box-shadow:0 8px 25px rgba(0,0,0,0.1);}
+header img { height:55px; margin-right:15px; border-radius:12px; }
+header h1 { font-size:2em; color:#ff6f31; }
+
+.profile-section { display:flex; align-items:center; gap:12px; background:white; padding:15px 20px; border-radius:18px; margin-bottom:20px; box-shadow:0 5px 20px rgba(0,0,0,0.08);}
+.profile-section img { width:55px; height:55px; border-radius:50%; border:2px solid #ff8c42; object-fit:cover; }
+.profile-section span { font-weight:700; color:#ff6f31; font-size:1.1em; }
+
+.thread { background:white; padding:22px 25px; margin:15px 0; border-radius:22px; box-shadow:0 8px 25px rgba(0,0,0,0.08); transition:all 0.3s; }
+.thread:hover { transform:translateY(-4px); box-shadow:0 14px 35px rgba(0,0,0,0.15);}
+.thread-header { display:flex; align-items:center; margin-bottom:12px;}
+.thread-header .avatar { width:55px; height:55px; border-radius:50%; margin-right:15px; border:3px solid #ff8c42; object-fit:cover; }
+.thread-content a { text-decoration:none; color:#ff6f31; font-weight:700; font-size:1.15em; }
+.thread-content a:hover { color:#ff8c42; }
+.thread-meta { font-size:0.85em; color:#777; }
+.thread-body { margin-left:70px; font-size:1em; line-height:1.5; }
+
+.votes { display:flex; align-items:center; gap:8px; margin-left:70px; margin-top:8px; }
+.votes button { background:#ff8c42; border:none; color:white; font-size:1.1em; width:36px; height:36px; border-radius:50%; cursor:pointer; transition:all 0.2s; }
+.votes button:hover { transform:scale(1.15); background:#ff5e3a; }
+.votes .count { font-weight:700; }
+.votes .voted-badge { background:#ff8c42; color:white; padding:3px 7px; border-radius:8px; font-size:0.75em; display:none; }
+
+.replies { margin-left:70px; margin-top:12px; }
+.reply { display:flex; align-items:flex-start; gap:10px; background:#fff7f2; padding:12px; border-radius:12px; margin-bottom:10px; border-left:4px solid #ff8c42; }
+.reply img { width:38px; height:38px; border-radius:50%; }
+.reply strong { color:#ff6f31; }
+
+.new-thread { background:white; padding:25px; margin-top:25px; border-radius:22px; box-shadow:0 8px 25px rgba(0,0,0,0.1); }
+.new-thread h2 { color:#ff6f31; margin-bottom:18px; }
+.new-thread input, .new-thread textarea { width:100%; padding:12px; margin-bottom:15px; border-radius:12px; border:1px solid #ccc; font-size:1em; }
+.new-thread input:focus, .new-thread textarea:focus { border-color:#ff6f31; outline:none; }
+.new-thread button { background:linear-gradient(to right,#ff8c42,#ff5e3a); color:white; border:none; padding:14px 26px; border-radius:14px; cursor:pointer; font-weight:700; font-size:1em; transition:all 0.2s; }
+.new-thread button:hover { transform:scale(1.05); background:linear-gradient(to right,#ff5e3a,#ff8c42); }
+
+.return-home { margin-top:20px; text-align:center; }
+.return-home a { display:inline-block; background:linear-gradient(to right,#ff8c42,#ff5e3a); color:white; text-decoration:none; padding:12px 24px; border-radius:14px; font-weight:700; transition:all 0.2s; }
+.return-home a:hover { transform:scale(1.05); background:linear-gradient(to right,#ff5e3a,#ff8c42); }
+
+footer { background:#ff6f31; color:white; text-align:center; padding:15px; font-weight:500; }
+.support-section { background:#ff7f50; color:white; padding:12px; text-align:center; font-weight:600; margin-top:5px; border-radius:8px; }
+
+@media (max-width:900px){
+  .container{flex-direction:column;}
+  .sidebar{width:100%; min-height:auto; flex-direction:row; justify-content:space-around;}
+  .main{max-width:100%;}
+  .thread-body, .votes, .replies { margin-left:0; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="sidebar">
+    <h2>Catégories</h2>
+    <a href="Aurore1.html">Accueil</a>
+    <a href="discu.html">Discussions générales</a>
+    <a href="SS.html">Soins & Santé</a>
+    <a href="pratiques.html">Pratiques Équestres</a>
+    <a href="#" id="competitionsLink">Compétitions ▼</a>
+    <div id="competitionsSub" style="display:none; margin-left:15px;">
+        <a href="organisation.html">Organisation</a>
+        <a href="resultat.html">Résultats Personnel</a>
+    </div>
+    <a href="equipement.html">Équipement & Accessoires</a>
+    <a href="annonce.html">Annonces</a>
+  </div>
+
+  <div class="main">
+    <header>
+      <img src="https://image.noelshack.com/fichiers/2026/04/1/1768815121-aurore.jpg" alt="Logo Aurore">
+      <h1>Organisation de Compétitions</h1>
+    </header>
+
+    <div class="profile-section">
+      <img id="userAvatar" src="https://image.noelshack.com/fichiers/2026/04/1/1768815843-profil-de-base.png" alt="Avatar">
+      <span id="pseudoDisplay">Anonyme</span>
+    </div>
+
+    <!-- Threads -->
+    <div id="threadsContainer"></div>
+
+    <div class="new-thread">
+      <h2>Créer une compétition</h2>
+      <form id="threadForm">
+        <label for="title">Nom de la compétition :</label>
+        <input type="text" id="title" placeholder="Ex : Jumping Club X" required>
+
+        <label for="content">Description :</label>
+        <textarea id="content" rows="3" placeholder="Décrivez la compétition, lieu, date..." required></textarea>
+
+        <label for="dateComp">Date :</label>
+        <input type="date" id="dateComp" required>
+
+        <button type="submit">Publier la compétition</button>
+      </form>
+    </div>
+
+    <div class="return-home">
+      <a href="Aurore1.html">⬅ Retour à l'accueil</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Aurore Équitation. Tous droits réservés.
+</footer>
+<div class="support-section">Support</div>
+
+<script>
+// Sidebar
+const competitionsLink = document.getElementById('competitionsLink');
+const competitionsSub = document.getElementById('competitionsSub');
+competitionsLink.addEventListener('click', (e)=>{
+  e.preventDefault();
+  competitionsSub.style.display = competitionsSub.style.display === 'none' ? 'block' : 'none';
+  competitionsLink.textContent = competitionsSub.style.display === 'block' ? "Compétitions ▲" : "Compétitions ▼";
+});
+
+// Profil persistant
+function loadProfile() {
+  const storedPseudo = localStorage.getItem('pseudo') || "Anonyme";
+  const storedAvatar = localStorage.getItem('avatar') || "https://image.noelshack.com/fichiers/2026/04/1/1768815843-profil-de-base.png";
+  document.getElementById('pseudoDisplay').textContent = storedPseudo;
+  document.getElementById('userAvatar').src = storedAvatar;
+}
+loadProfile();
+
+// Votes
+function addVoteListeners(threadElement){
+    const up = threadElement.querySelector('.upvote');
+    const down = threadElement.querySelector('.downvote');
+    const count = threadElement.querySelector('.count');
+    const badge = threadElement.querySelector('.voted-badge');
+    let reacted = false;
+    function vote(change){
+        if(reacted){ badge.style.display='inline-block'; return; }
+        reacted = true;
+        count.textContent = parseInt(count.textContent) + change;
+        up.disabled = true;
+        down.disabled = true;
+        badge.style.display='inline-block';
+    }
+    up.addEventListener('click', ()=> vote(1));
+    down.addEventListener('click', ()=> vote(-1));
+}
+
+// Création des threads
+const form = document.getElementById('threadForm');
+const threadsContainer = document.getElementById('threadsContainer');
+let userReplies = new WeakMap();
+
+form.addEventListener('submit', (e)=>{
+  e.preventDefault();
+  const title = document.getElementById('title').value;
+  const content = document.getElementById('content').value;
+  const dateComp = document.getElementById('dateComp').value;
+  const avatarUrl = localStorage.getItem('avatar') || "https://image.noelshack.com/fichiers/2026/04/1/1768815843-profil-de-base.png";
+  const pseudo = localStorage.getItem('pseudo') || "Anonyme";
+  const dateNow = new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'});
+
+  const thread = document.createElement('div');
+  thread.classList.add('thread');
+  thread.innerHTML = `
+      <div class="thread-header">
+          <img src="${avatarUrl}" class="avatar" alt="Avatar">
+          <div class="thread-content">
+              <a href="#">${title}</a>
+              <div class="thread-meta">${pseudo} • Créé le ${dateNow} • Compétition le ${dateComp}</div>
+          </div>
+      </div>
+      <div class="thread-body">${content}</div>
+      <div class="votes">
+          <button class="upvote">⬆</button>
+          <span class="count">0</span>
+          <button class="downvote">⬇</button>
+          <span class="voted-badge">Vous avez déjà voté</span>
+      </div>
+      <div class="replies"></div>
+      <div class="reply-form">
+          <h3>Répondre</h3>
+          <textarea class="replyContent" rows="2" placeholder="Votre réponse..."></textarea>
+          <button class="replyBtn">Envoyer</button>
+      </div>
+  `;
+  threadsContainer.prepend(thread);
+  addVoteListeners(thread);
+
+  const replyBtn = thread.querySelector('.replyBtn');
+  replyBtn.addEventListener('click', ()=>{
+      if(userReplies.get(thread)) return alert("Vous avez déjà répondu !");
+      const replyText = thread.querySelector('.replyContent').value;
+      if(replyText.trim() === "") return;
+      const replyDiv = document.createElement('div');
+      replyDiv.classList.add('reply');
+      replyDiv.innerHTML = `
+          <img src="${avatarUrl}" alt="Avatar">
+          <div>
+              <strong>${pseudo}</strong> • ${new Date().toLocaleDateString('fr-FR',{day:'numeric',month:'long',year:'numeric'})}<br>
+              ${replyText}
+          </div>
+      `;
+      thread.querySelector('.replies').appendChild(replyDiv);
+      thread.querySelector('.replyContent').value = "";
+      userReplies.set(thread,true);
+  });
+
+  form.reset();
+});
+</script>
+</body>
+</html>
